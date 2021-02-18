@@ -48,6 +48,13 @@ function App() {
       .then(response => setShoppingList(response.data))
       .catch(err => console.log('There was an error getting the list', err))
   };
+
+  const deleteShoppingList = () => {
+    axios
+      .delete('/list')
+      .then(response => fetchList())
+      .catch(err => console.log('Tere was an error deleting the list', err))
+  }
   
   // const 
     return (
@@ -65,7 +72,7 @@ function App() {
             newUnit = {newUnit} 
             setNewUnit = {setNewUnit}
             />
-            
+            <button onClick={deleteShoppingList}>Clear</button>
             <ShoppingList
              shoppingList={shoppingList}
             />
