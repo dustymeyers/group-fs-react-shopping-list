@@ -15,7 +15,7 @@ function ItemInputs() {
       item: newItemName,
       quantity: newQuantity,
       unit: newUnit
-    })
+    });
 
     // shoppingList function - POST in App.jsx
     // shoppingList(newItem)
@@ -25,7 +25,7 @@ function ItemInputs() {
   }
 
   const clearItemInputs = () => {
-    setNewItem('');
+    setNewItemName('');
     setNewQuantity(0);
     setNewUnit('');
   }
