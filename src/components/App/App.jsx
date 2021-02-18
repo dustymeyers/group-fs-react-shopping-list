@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import Header from '../Header/Header.jsx'
+import Header from '../Header/Header.jsx';
 import './App.css';
+import ShoppingList from '../ShoppingList/ShoppingList';
 
 
 function App() {
@@ -24,20 +25,9 @@ function App() {
             <Header />
             <main>
                 <p>Under Construction...</p>
-                <ul>
-                  {shoppingList.map(item => {
-                    return (
-                    <li key={item.id}>
-                      <div>{item.name}</div>
-                      <div>{item.quantity} {item.unit}</div>
-                      <div>
-                        <button>Buy</button>
-                        <button>Remove</button> 
-                      </div>
-                    </li>
-                    );
-                  })}
-                </ul>
+                <ShoppingList
+                  shoppingList={shoppingList}
+                />
             </main>
         </div>
     );
