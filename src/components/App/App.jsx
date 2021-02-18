@@ -45,10 +45,10 @@ function App() {
   const handleReset = () => {
     console.log('In handle reset');
     axios
-      .put('/list')
-      .then(response => console.log('Reset All');)
+      .put('/allItems')
+      .then(response => console.log('Reset All'))
       .catch(err => console.log('Reset all error', err))
-  }
+  };
 
 
   // ROUTES 
