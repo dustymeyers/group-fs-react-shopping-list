@@ -76,8 +76,6 @@ router.delete('/', (req, res) => {
     })
 })
 
-
-
 // DELETE ROUTE
 router.delete('/:id', (req, res) => {
   console.log('DELETE inside /list')
