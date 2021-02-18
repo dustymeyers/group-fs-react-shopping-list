@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
+/** Router at /list 
+*/
 
 // GET ROUTE
 router.get('/', (req, res) => {
@@ -18,6 +20,22 @@ router.get('/', (req, res) => {
             res.sendStatus(500); // Good server always responds
         })
 }) // end GET
+
+// POST ROUTE
+router.post('/', (req, res) => {
+  const shopItem = req.body;
+  console.log('req.body', req.body);
+  const sqlText = `INSERT INTO "shopping_list" ("name", "quantity", "unit")
+                    VALUES ($1, $2, $3);`;
+  pool.query(sqlText, [shopItem.name, shopItem.quantity, shopItem.unit])
+    .then(() => {
+      console.log('POST shopItems to the database', shopItem);
+      res.sendStatus(200);
+    }).catch((error) => {
+      console.log('POST route error', error);
+      sendStatus(500);
+    })
+}) // end POST
 
 // PUT ROUTE
 router.put('/:id', (req, res) => {
