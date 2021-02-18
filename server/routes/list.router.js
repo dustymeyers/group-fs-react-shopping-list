@@ -37,6 +37,8 @@ router.post('/', (req, res) => {
     })
 }) // end POST
 
+
+
 // PUT ROUTE
 router.put('/:id', (req, res) => {
   console.log('PUT inside /list')
@@ -56,6 +58,7 @@ router.put('/:id', (req, res) => {
         })
 }) // end PUT
 
+
 // DELETE ALL ROUTE
 router.delete('/', (req, res) => {
   console.log('DELETE inside /list/clear');
@@ -72,6 +75,7 @@ router.delete('/', (req, res) => {
       res.sendStatus(500); // Good server always responds
     })
 })
+
 
 
 // DELETE ROUTE
