@@ -12,7 +12,7 @@ const pool = require('../modules/pool.js');
 router.post('/', (req, res) => {
   const shopItem = req.body;
   console.log('req.body', req.body);
-  const sqlText = `INSERT INTO "shopping_list" ("name", "quantity", "unit") 
+  const sqlText = `INSERT INTO "shopping_list" ("name", "quantity", "unit")
                     VALUES ($1, $2, $3);`;
   pool.query(sqlText, [shopItem.name, shopItem.quantity, shopItem.unit])
     .then(() => {
