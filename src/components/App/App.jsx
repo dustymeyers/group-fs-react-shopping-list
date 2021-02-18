@@ -27,17 +27,18 @@ function App() {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     // put the item info in newItem
-    setNewItem({
-      item: newItemName,
-      quantity: newQuantity,
-      unit: newUnit
-    });
-
+    // setNewItem({
+    //   item: newItemName,
+    //   quantity: newQuantity,
+    //   unit: newUnit
+    // });
+    console.log('this is the newItem', newItemName);
     // shoppingList function - POST in App.jsx
     // shoppingList(newItem)
     
     // clear the inputs
     clearItemInputs();
+    addToList(newItemName, newQuantity, newUnit);
   }
 
 
@@ -48,6 +49,15 @@ function App() {
       .get('/list')
       .then(response => setShoppingList(response.data))
       .catch(err => console.log('There was an error getting the list', err))
+  };
+
+  // POST - ADD SINGLE ITEM
+  const addToList = (name, quantity, unit) => {
+    console.log('this is the item', name);
+    axios
+      .post('/list', {name, quantity, unit})
+      .then(() => fetchList())
+      .catch(error => console.log('axios POST error', error));
   };
 
    // PUT - UPDATE SINGLE ITEM 
@@ -75,7 +85,7 @@ function App() {
       console.log('CLIENT - DELETE - an error occurred', error)
     })
   }
-  
+
   // const 
     return (
         <div className="App">
