@@ -88,7 +88,7 @@ function App() {
   
   // DELETE - DELETE ALL ITEMS
   const deleteShoppingList = () => {
-    console.log('deleteShoppingList() ');
+    console.log('deleteShoppingList()');
     axios
       .delete('/list')
       .then(response => fetchList())
