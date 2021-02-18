@@ -42,7 +42,8 @@ function App() {
   }
 
 
-  // ROUTES 
+  // ************ ROUTES **************
+  // GET
   const fetchList = ()  => {
     axios
       .get('/list')
@@ -50,7 +51,7 @@ function App() {
       .catch(err => console.log('There was an error getting the list', err))
   };
 
-  // POST
+  // POST - ADD SINGLE ITEM
   const addToList = (name, quantity, unit) => {
     console.log('this is the item', name);
     axios
@@ -58,6 +59,32 @@ function App() {
       .then(() => fetchList())
       .catch(error => console.log('axios POST error', error));
   };
+
+   // PUT - UPDATE SINGLE ITEM 
+   const updateItemFromList = (itemId) => {
+    console.log('updateItemFromList() ');
+    axios.put(`/list/${itemId}`)
+    .then(response => {
+      console.log('CLIENT - PUT - a response occurred', response);
+      fetchList();
+    })
+    .catch(error => {
+      console.log('CLIENT - PUT - an error occurred', error)
+    })
+  }
+
+  // DELETE - DELETE SINGLE ITEM
+  const deleteItemFromList = (itemId) => {
+    console.log('deleteItemFromList() ');
+    axios.delete(`/list/${itemId}`)
+    .then(response => {
+      console.log('CLIENT - DELETE - a response occurred', response);
+      fetchList();
+    })
+    .catch(error => {
+      console.log('CLIENT - DELETE - an error occurred', error)
+    })
+  }
 
   // const 
     return (
