@@ -7,9 +7,24 @@ const pool = require('../modules/pool.js');
 
 /** /list 
  * 
- * 
+ * GET ROUTE at /list 
 */
 router.get('/', (req, res) => {
+  console.log('GET inside /list')
+  const sqlText = 'SELECT * FROM "shopping_list"';
+
+  pool.query(sqlText)
+        .then((result) => {
+            console.log(`Got back stuff from the database`, result);
+            res.send(result.rows);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${sqlText}`, error);
+            res.sendStatus(500); // Good server always responds
+        })
+}) // end GET
+
+router.delete('/:id', (req, res) => {
   console.log('GET inside /list')
   const sqlText = 'SELECT * FROM "shopping_list"';
 
