@@ -2,19 +2,42 @@ import React, { useEffect, useState } from 'react';
 
 function ItemInputs() {
 
-  const [newItem, setNewItem] = useState('');
+  const [newItemName, setNewItemName] = useState('');
   const [newQuantity, setNewQuantity] = useState(0);
   const [newUnit, setNewUnit] = useState('');
 
-  // onSubmit={handleSubmit}
+  const [newItem, setNewItem] = useState({});
+
+  const handleSubmit =(evt) => {
+    evt.preventDefault();
+    // put the item info in newItem
+    setNewItem({
+      item: newItemName,
+      quantity: newQuantity,
+      unit: newUnit
+    })
+
+    // shoppingList function - POST in App.jsx
+    // shoppingList(newItem)
+    
+    // clear the inputs
+    clearItemInputs();
+  }
+
+  const clearItemInputs = () => {
+    setNewItem('');
+    setNewQuantity(0);
+    setNewUnit('');
+  }
+
   return (
     <>
       <h3>Add an Item</h3>
-      <form >
+      <form onSubmit={handleSubmit}>
         <label htmlFor="itemInput">Item:</label>
         <input 
-          onChange={(e) => setNewItem(e.target.value)}
-          value={newItem}
+          onChange={(e) => setNewItemName(e.target.value)}
+          value={newItemName}
           type="text" id="itemInput"></input>
 
         <label htmlFor="quantityInput">Quantity:</label>
