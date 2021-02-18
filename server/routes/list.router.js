@@ -11,7 +11,7 @@ const pool = require('../modules/pool.js');
 */
 router.get('/', (req, res) => {
   console.log('GET inside /list')
-  const sqlText = 'SELECT * FROM "shopping_list"';
+  const sqlText = 'SELECT * FROM "shopping_list" ORDER BY "name" ASC';
 
   pool.query(sqlText)
         .then((result) => {
