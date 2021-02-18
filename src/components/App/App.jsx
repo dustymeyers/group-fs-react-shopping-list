@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Header from '../Header/Header.jsx';
 import './App.css';
+import ItemInputs from '../ItemInputs/ItemInputs'
 import ShoppingList from '../ShoppingList/ShoppingList';
 
 
@@ -22,13 +23,16 @@ function App() {
   // const 
     return (
         <div className="App">
-            <Header />
-            <main>
-                <p>Under Construction...</p>
-                <ShoppingList
-                  shoppingList={shoppingList}
-                />
-            </main>
+
+          <Header />
+      
+          <main>
+            <ItemInputs />
+            
+            <ShoppingList
+             shoppingList={shoppingList}
+            />
+          </main>
         </div>
     );
 }
