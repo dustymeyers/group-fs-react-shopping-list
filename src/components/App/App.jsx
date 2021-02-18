@@ -4,6 +4,7 @@ import Header from '../Header/Header.jsx';
 import './App.css';
 import ItemInputs from '../ItemInputs/ItemInputs'
 import ShoppingList from '../ShoppingList/ShoppingList';
+import ResetButton from '../ResetButton/ResetButton'
 
 
 function App() {
@@ -40,6 +41,15 @@ function App() {
     clearItemInputs();
   }
 
+  // Reset all PUT route
+  const handleReset = () => {
+    console.log('In handle reset');
+    axios
+      .put('/list')
+      .then(response => console.log('Reset All');)
+      .catch(err => console.log('Reset all error', err))
+  }
+
 
   // ROUTES 
   const fetchList = ()  => {
@@ -66,6 +76,9 @@ function App() {
             setNewUnit = {setNewUnit}
             />
             
+            <ResetButton 
+              handleReset={handleReset}
+            />
             <ShoppingList
              shoppingList={shoppingList}
             />
