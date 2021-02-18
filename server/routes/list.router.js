@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
       res.sendStatus(200);
     }).catch((error) => {
       console.log('POST route error', error);
-      sendStatus(500);
+      res.sendStatus(500);
     })
 }) // end POST
 
@@ -59,6 +59,24 @@ router.put('/:id', (req, res) => {
 }) // end PUT
 
 
+// DELETE ALL ROUTE
+router.delete('/', (req, res) => {
+  console.log('DELETE inside /list/clear');
+  
+  const sqlText = 'DELETE FROM "shopping_list";'
+
+  pool.query(sqlText)
+    .then(result => {
+      console.log('Delete all items from shopping_list', result);
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log(`Error making database query ${sqlText}`, error);
+      res.sendStatus(500); // Good server always responds
+    })
+})
+
+
 
 // DELETE ROUTE
 router.delete('/:id', (req, res) => {
@@ -78,5 +96,6 @@ router.delete('/:id', (req, res) => {
             res.sendStatus(500); // Good server always responds
         })
 }) // end DELETE
+
 
 module.exports = router;
