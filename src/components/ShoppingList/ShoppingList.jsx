@@ -10,8 +10,8 @@ function ShoppingList({
             <div>{item.name}</div>
             <div>{item.quantity} {item.unit}</div>
             <div>
-              <button key={item.id} onClick={updateItemFromList}>Buy</button>
-              <button key={item.id} onClick={deleteItemFromList}>Remove</button> 
+              <button onClick={updateItemFromList}>Buy</button>
+              <button onClick={deleteItemFromList}>Remove</button> 
             </div>
           </li>
         );
