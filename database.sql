@@ -2,11 +2,16 @@
 -- It is also helpful to include some test data
 
 -- fs-react-shopping -- 
+-- fs-react-shopping -- 
+
+DROP TABLE "shopping_list";
 
 CREATE TABLE "shopping_list"
-("name" VARCHAR(80) NOT NULL,
+("id" SERIAL PRIMARY KEY,
+ "name" VARCHAR(80) NOT NULL,
  "quantity" FLOAT DEFAULT 1, 
- "unit" VARCHAR(20) NOT NULL);
+ "unit" VARCHAR(20) NOT NULL, 
+ "purchased" BOOLEAN DEFAULT FALSE);
 
 INSERT INTO "shopping_list" 
 ("name", "quantity", "unit")
