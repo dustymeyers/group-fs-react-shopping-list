@@ -50,7 +50,7 @@ function App() {
       .then(response => setShoppingList(response.data))
       .catch(err => console.log('There was an error getting the list', err))
   };
-
+  
   // POST - ADD SINGLE ITEM
   const addToList = (name, quantity, unit) => {
     console.log('this is the item', name);
@@ -85,6 +85,15 @@ function App() {
       console.log('CLIENT - DELETE - an error occurred', error)
     })
   }
+  
+  // DELETE - DELETE ALL ITEMS
+  const deleteShoppingList = () => {
+    console.log('deleteShoppingList() ');
+    axios
+      .delete('/list')
+      .then(response => fetchList())
+      .catch(err => console.log('Tere was an error deleting the list', err))
+  }
 
   // const 
     return (
@@ -102,7 +111,7 @@ function App() {
             newUnit = {newUnit} 
             setNewUnit = {setNewUnit}
             />
-            
+            <button onClick={deleteShoppingList}>Clear</button>
             <ShoppingList
              shoppingList={shoppingList}
             />
