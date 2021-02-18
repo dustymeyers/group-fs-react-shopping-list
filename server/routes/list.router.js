@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
       res.sendStatus(200);
     }).catch((error) => {
       console.log('POST route error', error);
-      sendStatus(500);
+      res.sendStatus(500);
     })
 }) // end POST
 
