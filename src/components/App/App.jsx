@@ -100,7 +100,7 @@ function App() {
   const deleteShoppingList = () => {
     console.log('deleteShoppingList()');
     axios
-      .delete('/list')
+      .delete('/allItems')
       .then(response => fetchList())
       .catch(err => console.log('Tere was an error deleting the list', err))
   }
