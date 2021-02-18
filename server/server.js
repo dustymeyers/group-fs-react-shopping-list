@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const listRouter = require('./routes/list.router.js');
+const allItemsRouter = require('./routes/allItems.router.js');
 const PORT = process.env.PORT || 5000;
 
 /** ---------- MIDDLEWARE ---------- **/
@@ -10,6 +11,7 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 app.use('/list', listRouter);
+app.use('/allItems', allItemsRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT,  () => {
