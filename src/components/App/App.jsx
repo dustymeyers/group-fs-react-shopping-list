@@ -42,12 +42,21 @@ function App() {
 
 
   // ROUTES 
+  // GET
   const fetchList = ()  => {
     axios
       .get('/list')
       .then(response => setShoppingList(response.data))
       .catch(err => console.log('There was an error getting the list', err))
   };
+
+  // DELETE - SINGLE ITEM
+  const deleteItemFromList = (itemId) => {
+    axios
+      .delete(`/list/${itemId}`)
+      .then(response => console.log('CLIENT - a response occurred', response))
+      .catch(error => console.log('CLIENT - an error occurred', error))
+  }
   
   // const 
     return (
