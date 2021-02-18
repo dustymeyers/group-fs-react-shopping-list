@@ -1,4 +1,7 @@
-function ShoppingList({shoppingList}) {
+function ShoppingList({
+  shoppingList, 
+  updateItemFromList, 
+  deleteItemFromList}) {
   return(
     <ul>
       {shoppingList.map(item => {
@@ -7,8 +10,8 @@ function ShoppingList({shoppingList}) {
             <div>{item.name}</div>
             <div>{item.quantity} {item.unit}</div>
             <div>
-              <button>Buy</button>
-              <button>Remove</button> 
+              <button key={item.id} onClick={updateItemFromList}>Buy</button>
+              <button key={item.id} onClick={deleteItemFromList}>Remove</button> 
             </div>
           </li>
         );

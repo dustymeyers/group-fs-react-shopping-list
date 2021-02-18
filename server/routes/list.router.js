@@ -56,6 +56,7 @@ router.put('/:id', (req, res) => {
         })
 }) // end PUT
 
+
 // DELETE ALL ROUTE
 router.delete('/', (req, res) => {
   console.log('DELETE inside /list/clear');
@@ -72,7 +73,6 @@ router.delete('/', (req, res) => {
       res.sendStatus(500); // Good server always responds
     })
 })
-
 
 // DELETE ROUTE
 router.delete('/:id', (req, res) => {
