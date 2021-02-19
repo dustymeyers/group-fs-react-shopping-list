@@ -11,10 +11,10 @@ The shopping list is an e-commerce full-stack application built with React front
 1st Phase
 
 ## Prerequisites 
-[Node.js](https://nodejs.org/en/)
-[NPM](https://www.npmjs.com/)
-[Postico](https://eggerapps.at/postico/)
-[React](https://reactjs.org/)
+[Node.js](https://nodejs.org/en/)  
+[NPM](https://www.npmjs.com/)  
+[Postico](https://eggerapps.at/postico/)  
+[React](https://reactjs.org/)  
 
 ## Installation 
 1. Create the database named "fs-react-shopping" in Postico. Afterwards, the user can open the database.sql file and copy/paste the text in Postico to create the tables and dummy data.  
@@ -32,13 +32,13 @@ The shopping list is an e-commerce full-stack application built with React front
 
 ## Built With 
 
-1. Express 
-2. HTML/CSS
-3. Javascript
-4. Node
-5. PostgreSQL & Postico
-6. React
-7. VS Code (Text Editor)
+1. Express  
+2. HTML/CSS  
+3. Javascript  
+4. Node  
+5. PostgreSQL & Postico  
+6. React  
+7. VS Code (Text Editor)  
 
 ## Acknowledgements 
 
