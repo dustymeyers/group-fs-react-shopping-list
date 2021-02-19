@@ -10,6 +10,9 @@ The shopping list is an e-commerce full-stack application built with React front
 ![React Shopping List](screen1.png)
 1st Phase
 
+![React Shopping List](screen2.png)
+2nd Phase
+
 ## Prerequisites 
 [Node.js](https://nodejs.org/en/)  
 [NPM](https://www.npmjs.com/)  
@@ -42,7 +45,7 @@ The shopping list is an e-commerce full-stack application built with React front
 
 ## Acknowledgements 
 
-Special thanks to Prime Academy and my teammates, Dusty Meyers, John Anthony, and Patrick Nelson! 
+Special thanks to Prime Academy and Cullen Pod-2, John Shands, Dusty Meyers, John Anthony, and Patrick Nelson! 
 
 
 
