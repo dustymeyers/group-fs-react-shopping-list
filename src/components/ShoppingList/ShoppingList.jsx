@@ -1,3 +1,5 @@
+import ListItemButtons from '../ListItemButtons/ListItemButtons';
+
 function ShoppingList({
   shoppingList, 
   updateItemFromList, 
@@ -9,10 +11,12 @@ function ShoppingList({
           <li key={item.id}>
             <div>{item.name}</div>
             <div>{item.quantity} {item.unit}</div>
-            <div>
-              <button onClick={() => updateItemFromList(item.id)}>Buy</button>
-              <button onClick={() => deleteItemFromList(item.id)}>Remove</button> 
-            </div>
+            {item.purchased 
+            ? <p>Purchased</p> 
+            : <ListItemButtons
+               item={item}
+               updateItemFromList={updateItemFromList}
+               deleteItemFromList={deleteItemFromList}/>}
           </li>
         );
       })}

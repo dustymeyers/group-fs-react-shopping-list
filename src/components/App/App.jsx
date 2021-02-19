@@ -118,8 +118,6 @@ function App() {
         <div className="App">
 
           <Header />
-
-          <button onClick={deleteShoppingList}>Clear</button>
       
           <main>
             <ItemInputs
