@@ -2,3 +2,23 @@ main {
   width: 90%;
   margin: auto;
 }
+
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.itemContainer {
+  text-align: center;
+  list-style-type: none;
+  width: 12% ;
+  border: 1px solid black;
+  margin: 15px 15px;
+  padding: 30px;
+}
+
+.purchased {
+  background-color: green;
+  opacity: 0.5;
+}
