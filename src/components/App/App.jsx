@@ -4,7 +4,8 @@ import Header from '../Header/Header.jsx';
 import './App.css';
 import ItemInputs from '../ItemInputs/ItemInputs'
 import ShoppingList from '../ShoppingList/ShoppingList';
-import ResetButton from '../ResetButton/ResetButton'
+import ResetButton from '../ResetButton/ResetButton';
+import ClearAllButton from '../ClearAllButton/ClearAllButton';
 
 
 function App() {
@@ -135,9 +136,9 @@ function App() {
 
       
 
-            <button onClick={deleteShoppingList}>Clear</button>
-
-
+            <ClearAllButton 
+              deleteShoppingList={deleteShoppingList}
+            />
             <ShoppingList
              shoppingList={shoppingList}
              deleteItemFromList={deleteItemFromList}
