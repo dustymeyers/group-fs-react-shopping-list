@@ -20,3 +20,5 @@ VALUES ('apples', 5, 'lbs'),
        ('milk', 1, 'gallon'), 
        ('sliced almonds', 2, 'cups'),
        ('bananas', 1, 'bunch');
+
+SELECT * FROM "shopping_list" ORDER BY "purchased"=FALSE DESC, "name" ASC;
