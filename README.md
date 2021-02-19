@@ -13,7 +13,7 @@ The shopping list is an e-commerce full-stack application built with React front
 
 
 ### 2nd Phase
-![React Shopping List](screen2.png)
+![React Shopping List](screen3.png)
 
 
 ## Prerequisites 
