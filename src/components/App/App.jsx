@@ -47,7 +47,7 @@ function App() {
     console.log('In handle reset');
     axios
       .put('/allItems')
-      .then(response => console.log('Reset All'))
+      .then(response => fetchList())
       .catch(err => console.log('Reset all error', err))
   };
 
