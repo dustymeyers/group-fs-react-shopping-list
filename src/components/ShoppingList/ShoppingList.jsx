@@ -11,10 +11,12 @@ function ShoppingList({
           <li key={item.id}>
             <div>{item.name}</div>
             <div>{item.quantity} {item.unit}</div>
-            <ListItemButtons 
-            item={item} 
-            updateItemFromList={updateItemFromList}
-            deleteItemFromList={deleteItemFromList}/>
+            {item.purchased 
+            ? <p>Purchased</p> 
+            : <ListItemButtons
+               item={item}
+               updateItemFromList={updateItemFromList}
+               deleteItemFromList={deleteItemFromList}/>}
           </li>
         );
       })}
