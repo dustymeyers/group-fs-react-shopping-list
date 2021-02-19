@@ -7,11 +7,14 @@ React Shopping List is a project built over two days by four students at Prime A
 The shopping list is an e-commerce full-stack application built with React frontend and a Node backend.
 
 ## Screen Shots
-![React Shopping List](screen1.png)
-1st Phase
 
-![React Shopping List](screen2.png)
-2nd Phase
+### 1st Phase
+![React Shopping List](screen0.png)
+
+
+### 2nd Phase
+![React Shopping List](screen1.png)
+
 
 ## Prerequisites 
 [Node.js](https://nodejs.org/en/)  
